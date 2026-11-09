@@ -77,7 +77,7 @@ export default async function OnboardingPage({ searchParams }: PageProps<"/onboa
               <Heading title="Name your workspace" text="A workspace holds your team, projects and billing. You can rename it later." />
               <ActionForm action={createWorkspaceAction}>
                 <input type="hidden" name="next" value={user.onboardingCompleted ? "/dashboard" : href("invite")} />
-                <Field label="Workspace name" name="name" placeholder="e.g. Acme Inc" maxLength={limits.workspaceName} required autoFocus />
+                <Field label="Workspace name" name="name" placeholder="e.g. Leeds Design Studio" maxLength={limits.workspaceName} required autoFocus />
                 <div className="flex justify-end">
                   <SubmitButton>Continue</SubmitButton>
                 </div>

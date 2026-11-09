@@ -8,7 +8,7 @@ const stripePricePro = env("STRIPE_PRICE_PRO");
 const stripePriceBusiness = env("STRIPE_PRICE_BUSINESS");
 
 export const config = {
-  appName: env("APP_NAME") ?? "Acme",
+  appName: env("APP_NAME") ?? "Your App",
   appUrl: env("APP_URL")?.replace(/\/+$/, ""),
   adminEmails: (env("ADMIN_EMAILS") ?? "")
     .split(",")
@@ -16,7 +16,7 @@ export const config = {
     .filter(Boolean),
   email: {
     resendApiKey: env("RESEND_API_KEY"),
-    from: env("EMAIL_FROM") ?? "Acme <onboarding@resend.dev>",
+    from: env("EMAIL_FROM") ?? "Your App <onboarding@resend.dev>",
   },
   github: oauth("GITHUB"),
   google: oauth("GOOGLE"),

@@ -15,7 +15,7 @@ export default function NewWorkspacePage() {
         <CardContent>
           <ActionForm action={createWorkspaceAction}>
             <input type="hidden" name="next" value="/dashboard" />
-            <Field label="Workspace name" name="name" placeholder="e.g. Acme Inc" required maxLength={limits.workspaceName} autoFocus />
+            <Field label="Workspace name" name="name" placeholder="e.g. Leeds Design Studio" required maxLength={limits.workspaceName} autoFocus />
             <SubmitButton>Create workspace</SubmitButton>
           </ActionForm>
         </CardContent>

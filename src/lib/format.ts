@@ -27,7 +27,7 @@ export const formatRole = (role: string | null | undefined) =>
     .map((r) => r.trim().replace(/^./, (c) => c.toUpperCase()))
     .join(", ");
 
-/** "Ada Lovelace" -> "AL", "ada" -> "A"; first letters of the first and last word. */
+/** "Sarah Jones" -> "SJ", "sarah" -> "S"; first letters of the first and last word. */
 export function initials(name: string) {
   const words = name.trim().split(/\s+/).filter(Boolean);
   if (words.length === 0) return "?";

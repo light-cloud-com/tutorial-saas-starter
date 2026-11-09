@@ -35,7 +35,7 @@ export function DashboardMock({ appName }: { appName: string }) {
             <span className="size-5 rounded-md bg-primary" /> {appName}
           </div>
           <div className="rounded-md border bg-background p-2">
-            <p className="font-medium">Acme Inc</p>
+            <p className="font-medium">Leeds Design Studio</p>
             <p className="text-[10px] text-muted-foreground">Pro plan</p>
           </div>
           <div className="space-y-0.5">
@@ -44,17 +44,17 @@ export function DashboardMock({ appName }: { appName: string }) {
             <p className="flex items-center gap-2 px-2 py-1.5 text-muted-foreground"><Settings className="size-3.5" /> Settings</p>
           </div>
           <div className="mt-auto flex items-center gap-2 border-t pt-3">
-            <span className="flex size-6 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-semibold text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200">AL</span>
+            <span className="flex size-6 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-semibold text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200">SJ</span>
             <span className="min-w-0">
-              <span className="block truncate font-medium">Ada Lovelace</span>
-              <span className="block truncate text-[10px] text-muted-foreground">ada@example.com</span>
+              <span className="block truncate font-medium">Sarah Jones</span>
+              <span className="block truncate text-[10px] text-muted-foreground">sarah@leedsdesignstudio.example</span>
             </span>
           </div>
         </div>
         <div className="min-w-0 flex-1 space-y-3 p-3 sm:space-y-4 sm:p-5">
           <div>
-            <p className="text-sm font-semibold sm:text-base">Welcome back, Ada</p>
-            <p className="text-muted-foreground">Here is what is happening in Acme Inc.</p>
+            <p className="text-sm font-semibold sm:text-base">Welcome back, Sarah</p>
+            <p className="text-muted-foreground">Here is what is happening in Leeds Design Studio.</p>
           </div>
           <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
             {stats.map(({ label, value, bar, icon: Icon }) => (
