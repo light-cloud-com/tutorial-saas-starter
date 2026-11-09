@@ -22,6 +22,26 @@ A Next.js 16 SaaS starter kit in TypeScript with PostgreSQL, Better Auth, Drizzl
   </tr>
 </table>
 
+<!-- stack:start -->
+## Tech stack
+
+<p>
+<a href="https://nextjs.org"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/stack/nextjs-dark.svg"><img src="docs/stack/nextjs.svg" alt="Next.js" title="Next.js" height="48"></picture></a>&nbsp;&nbsp;&nbsp;
+<a href="https://react.dev"><img src="docs/stack/react.svg" alt="React" title="React" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.typescriptlang.org"><img src="docs/stack/typescript.svg" alt="TypeScript" title="TypeScript" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.postgresql.org"><img src="docs/stack/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://tailwindcss.com"><img src="docs/stack/tailwindcss.svg" alt="Tailwind CSS" title="Tailwind CSS" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://ui.shadcn.com"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/stack/shadcn-dark.svg"><img src="docs/stack/shadcn.svg" alt="shadcn/ui" title="shadcn/ui" height="48"></picture></a>&nbsp;&nbsp;&nbsp;
+<a href="https://orm.drizzle.team"><img src="docs/stack/drizzle.svg" alt="Drizzle ORM" title="Drizzle ORM" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.better-auth.com"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/stack/betterauth-dark.svg"><img src="docs/stack/betterauth.svg" alt="Better Auth" title="Better Auth" height="48"></picture></a>&nbsp;&nbsp;&nbsp;
+<a href="https://stripe.com"><img src="docs/stack/stripe.svg" alt="Stripe" title="Stripe" height="48"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://vitest.dev"><img src="docs/stack/vitest.svg" alt="Vitest" title="Vitest" height="48"></a>
+</p>
+
+Next.js · React · TypeScript · PostgreSQL · Tailwind CSS · shadcn/ui · Drizzle ORM · Better Auth · Stripe · Vitest
+
+<!-- stack:end -->
+
 ## Features
 
 - **Accounts**: email and password sign-up, sign-in, sign-out and password reset; email verification once an email provider is set; GitHub and Google sign-in when their keys are set. Sessions live in the database.
