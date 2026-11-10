@@ -12,7 +12,7 @@
 </div>
 
 > [!NOTE]
-> [Deploy in one click](https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) · [Customize with AI](https://www.light-cloud.com/deploy-with-ai?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) ([Light Cloud MCP server](https://docs.light-cloud.com/deploy-with-ai/mcp-server?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter)) · [Hosting with a free plan](https://www.light-cloud.com/pricing?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter)
+> [Deploy in one click](https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) · [Customize with AI](https://www.light-cloud.com/deploy-with-ai?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) ([Light Cloud MCP server](https://docs.light-cloud.com/deploy-with-ai/mcp-server?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) + [Skills](https://github.com/light-cloud-com/skills)) · [Hosting with PostgreSQL included](https://www.light-cloud.com/databases?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter)
 <!-- header:end -->
 
 <a href="https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
