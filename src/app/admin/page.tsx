@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { db, schema } from "@/lib/db";
 import { formatDate, formatRole } from "@/lib/format";
-import { getSession, isPlatformAdmin } from "@/lib/session";
+import { getSession, isPlatformAdmin, requireUser } from "@/lib/session";
 import { impersonateAction, setBannedAction } from "./actions";
 
 const { user, organization, subscription } = schema;
@@ -30,6 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
 type Query = { tab: "users" | "workspaces"; q: string; page: number };
 
 export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
+  // Checked here as well as in the layout: Next.js renders a layout and its page in parallel.
+  const { user: me } = await requireUser();
+  if (!isPlatformAdmin(me)) notFound();
   const sp = await searchParams;
   const query: Query = {
     tab: sp.tab === "workspaces" ? "workspaces" : "users",
@@ -37,7 +40,6 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
     page: Math.max(1, Number.parseInt(String(sp.page ?? "1"), 10) || 1),
   };
   const like = `%${query.q.replace(/[%_\\]/g, "\\$&")}%`;
-  const me = (await getSession())!.user;
 
   return (
     <>

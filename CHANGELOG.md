@@ -4,6 +4,10 @@ All notable changes to the Next.js SaaS Starter with PostgreSQL and Stripe are l
 
 ## [Unreleased]
 
+### Security
+
+- The admin page checks for a platform admin itself, not only in its layout, so its user and workspace lists are no longer sent to signed-in non-admins.
+
 ## [1.0.0] - 2026-11-10
 
 First release of the Next.js SaaS Starter with PostgreSQL and Stripe: Open-source Next.js 16 SaaS starter kit in TypeScript with PostgreSQL, Better Auth, Drizzle ORM, Stripe subscriptions, teams and roles, onboarding, an admin panel, API keys and a REST API, styled with Tailwind CSS and shadcn/ui. Deploy to Light Cloud with a PostgreSQL database in one click.
