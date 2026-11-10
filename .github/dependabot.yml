@@ -15,6 +15,10 @@ updates:
       minor-and-patch:
         patterns: ["*"]
         update-types: [minor, patch]
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns: ["*"]
+        update-types: [minor, patch]
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
@@ -27,6 +31,10 @@ updates:
       prefix: Dependencies # Dependabot adds the colon: "Dependencies: bump ..."
     groups:
       minor-and-patch:
+        patterns: ["*"]
+        update-types: [minor, patch]
+      security-minor-and-patch:
+        applies-to: security-updates
         patterns: ["*"]
         update-types: [minor, patch]
     ignore:

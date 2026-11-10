@@ -6,6 +6,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  # the merge queue in the Protect main ruleset tests each pull request on top of the latest main
+  merge_group:
   workflow_dispatch:
 
 permissions:
