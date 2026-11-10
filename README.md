@@ -1,6 +1,19 @@
+<!-- header:start -->
+<div align="center">
+
+<a href="https://www.light-cloud.com?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/brand/light-cloud-dark.svg"><img src="docs/brand/light-cloud.svg" alt="Light Cloud" height="64"></picture></a>
+
 # Next.js SaaS Starter Kit
 
-[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE) [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org) [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev) [![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org) [![Tests: Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](test) [![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?logo=github)](https://github.com/light-cloud-templates/nextjs-saas-starter/generate)
+**Ship sign-up, teams, Stripe billing and an admin panel on Next.js and PostgreSQL**
+
+[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE) [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org) [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev) [![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org) [![Tests: Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](test) [![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?logo=github)](https://github.com/light-cloud-templates/nextjs-saas-starter/generate) [![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-181717?logo=github)](https://codespaces.new/light-cloud-templates/nextjs-saas-starter?quickstart=1)
+
+</div>
+
+> [!NOTE]
+> [Deploy in one click](https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) · [Customize with AI](https://www.light-cloud.com/deploy-with-ai?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) ([Light Cloud MCP server](https://docs.light-cloud.com/deploy-with-ai/mcp-server?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter)) · [Hosting with a free plan](https://www.light-cloud.com/pricing?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter)
+<!-- header:end -->
 
 <a href="https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
 
