@@ -2,7 +2,7 @@
 
 [![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE) [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org) [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev) [![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org) [![Tests: Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](test) [![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?logo=github)](https://github.com/light-cloud-templates/nextjs-saas-starter/generate)
 
-<a href="https://www.light-cloud.com/templates/nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
+<a href="https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
 
 A Next.js 16 SaaS starter kit in TypeScript with PostgreSQL, Better Auth, Drizzle ORM, Tailwind CSS and shadcn/ui. It is a free, MIT-licensed SaaS boilerplate for developers who want sign-up and sign-in, teams with roles, onboarding, Stripe subscriptions, an admin panel, API keys and a REST API already built. It runs with no third-party keys: email, billing and social sign-in switch on when you add their variables.
 
@@ -73,13 +73,13 @@ Open <http://localhost:3000> and sign up: the first account is the admin. Until 
 Other ways to start:
 
 - **Use this template**: press [Use this template](https://github.com/light-cloud-templates/nextjs-saas-starter/generate) to create your own repository from this one.
-- **Deploy to Light Cloud**: open the [template page](https://www.light-cloud.com/templates/nextjs-saas-starter) and press Deploy to get a running copy with a database.
+- **Deploy to Light Cloud**: open the [template page](https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) and press Deploy to get a running copy with a database.
 
 ## Deploy
 
 ### Deploy to Light Cloud
 
-<a href="https://www.light-cloud.com/templates/nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
+<a href="https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter"><img src="https://light-cloud.com/button.svg" alt="Deploy Next.js SaaS Starter Kit to Light Cloud" height="44"></a>
 
 The Deploy button copies this template into your GitHub account and creates:
 
@@ -204,27 +204,30 @@ flowchart LR
 
 `npm start` applies the SQL migrations in `drizzle/` first (one instance at a time, through a PostgreSQL advisory lock), then starts `next start`. Every feature is driven by `src/lib/config.ts`: it switches on only when all of its variables are set.
 
+<!-- faq:start -->
 ## FAQ
 
-### Does it work without Stripe or an email provider?
+### Does this Next.js SaaS starter include Stripe billing?
 
-Yes. With only `DATABASE_URL` and `AUTH_SECRET`, sign-up, teams, projects, the admin panel and the API all work. Everyone is on the Free plan and emails go to the server log.
+Yes. Stripe Checkout, the customer portal and a webhook at /api/auth/stripe/webhook switch on when STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_PRICE_PRO and STRIPE_PRICE_BUSINESS are all set. Subscriptions belong to the workspace, and only owners can upgrade.
 
-### How do I change the plans and prices?
+### Can I run a Next.js SaaS starter without Stripe or an email provider?
 
-Edit `src/lib/plans.ts`: it drives the pricing page, the plan limits and Stripe Checkout. The prices there are for display; Stripe charges what the price ids say.
+Yes. With only DATABASE_URL and AUTH_SECRET, sign-up, teams, projects, the admin panel and the API all work. Everyone stays on the Free plan and emails are printed to the server log.
 
-### How do I add my own resource instead of Projects?
+### How do I change the plans and prices in this SaaS template?
 
-Add a table to `src/lib/db/schema.ts`, run `npm run db:generate` and commit the new file in `drizzle/`. Copy the pattern of `src/lib/projects.ts`, the pages in `src/app/(app)/projects` and the API in `src/app/api/v1`.
+Edit src/lib/plans.ts, which drives the pricing page, the project and member limits and Stripe Checkout. The prices there are for display only; Stripe charges what the price ids say.
 
-### How do I make someone an admin?
+### How do I deploy a Next.js app with a PostgreSQL database?
 
-Add their email to `ADMIN_EMAILS` and redeploy. The first account ever created is always an admin.
+On a paid Light Cloud plan, the Deploy button copies the repo into your GitHub account, creates the database, sets DATABASE_URL and generates AUTH_SECRET. Migrations run when the app starts, and each push to your copy redeploys.
 
-### Can I deploy it without Light Cloud?
+### Can I host this Next.js SaaS starter without Light Cloud?
 
-Yes. It is a plain Next.js app: any Node.js 22.12 host with PostgreSQL runs it with `npm run build` and `npm start`, once `DATABASE_URL` and `AUTH_SECRET` are set.
+Yes. It is a standard Next.js app with no Light Cloud code: any Node.js 22.12 host that can reach PostgreSQL runs it with npm ci, npm run build and npm start, once DATABASE_URL and AUTH_SECRET are set.
+
+<!-- faq:end -->
 
 ## Related templates
 
@@ -239,4 +242,4 @@ MIT, see [LICENSE](LICENSE).
 
 ---
 
-Maintained by [Light Cloud](https://light-cloud.com): deploy apps, APIs and databases in one click.
+Maintained by [Light Cloud](https://light-cloud.com?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter): deploy apps, APIs and databases in one click.
