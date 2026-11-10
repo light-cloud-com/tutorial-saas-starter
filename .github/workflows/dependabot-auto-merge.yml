@@ -22,7 +22,10 @@ jobs:
         uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
       - name: Merge minor and patch updates when CI passes
         if: steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'
-        run: gh pr merge --auto --squash "$PR_URL"
+        # Auto-merge waits for the required CI check. When checks finish while this runs, GitHub
+        # refuses auto-merge on a pull request that is already mergeable, so merge it directly:
+        # the ruleset still only accepts that once CI has passed (this token cannot bypass it).
+        run: gh pr merge --auto --squash "$PR_URL" || gh pr merge --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
