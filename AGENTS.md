@@ -64,7 +64,7 @@ Open the URL and sign up: it works with no other keys. The app works out its pub
 - Use npm: `package-lock.json` is committed, so add packages with `npm install <package>` and commit the lockfile.
 - Every page checks its own access (`requireWorkspace()`, or the platform-admin check in `/admin`), not only its layout: Next.js renders a layout and its page in parallel, so a layout check alone does not stop the page's data being sent.
 - Add or update tests with each change, and run the commands under Test before you finish.
-- README.md is the template's landing page. Keep its H1, badges and Deploy button. The blocks between `<!-- header:start -->`, `<!-- stack:start -->` and `<!-- faq:start -->` markers, this file's generated block, CI and the dev container are generated from `catalogue.json` in [awesome-templates](https://github.com/light-cloud-templates/awesome-templates): change them there. Keep the rest of the README in step with the code.
+- README.md is the template's landing page. Keep its H1, badges and Deploy button. The blocks between `<!-- header:start -->`, `<!-- stack:start -->` and `<!-- faq:start -->` markers, this file's generated block, CI and the dev container are generated from `catalogue.json` in [awesome-templates](https://github.com/light-cloud-dev/awesome-templates): change them there. Keep the rest of the README in step with the code.
 - Note user-facing changes under `## [Unreleased]` in CHANGELOG.md.
 - Copy is UK English, sentence case, no emoji.
 

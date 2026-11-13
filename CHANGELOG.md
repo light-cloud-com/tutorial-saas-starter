@@ -24,5 +24,5 @@ First release of the Next.js SaaS Starter with PostgreSQL and Stripe: Open-sourc
 - Vitest unit tests, an integration test that signs up two users and drives the API, and npm run smoke for a running app.
 - A GitHub Codespaces dev container, CI on every push and pull request, dependency review, and AGENTS.md for coding agents.
 
-[Unreleased]: https://github.com/light-cloud-templates/nextjs-saas-starter/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/light-cloud-templates/nextjs-saas-starter/releases/tag/v1.0.0
+[Unreleased]: https://github.com/light-cloud-dev/nextjs-saas-starter/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/light-cloud-dev/nextjs-saas-starter/releases/tag/v1.0.0

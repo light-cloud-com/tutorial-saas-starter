@@ -7,7 +7,7 @@
 
 **Ship sign-up, teams, Stripe billing and an admin panel on Next.js and PostgreSQL**
 
-[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE) [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org) [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev) [![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org) [![Tests: Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](test) [![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?logo=github)](https://github.com/light-cloud-templates/nextjs-saas-starter/generate) [![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-181717?logo=github)](https://codespaces.new/light-cloud-templates/nextjs-saas-starter?quickstart=1)
+[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE) [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org) [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev) [![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org) [![Tests: Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](test) [![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?logo=github)](https://github.com/light-cloud-dev/nextjs-saas-starter/generate) [![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-181717?logo=github)](https://codespaces.new/light-cloud-dev/nextjs-saas-starter?quickstart=1)
 
 </div>
 
@@ -73,7 +73,7 @@ Next.js · React · TypeScript · PostgreSQL · Tailwind CSS · shadcn/ui · Dri
 You need Node.js 22.12 or newer and Docker (for a local PostgreSQL).
 
 ```bash
-git clone https://github.com/light-cloud-templates/nextjs-saas-starter.git
+git clone https://github.com/light-cloud-dev/nextjs-saas-starter.git
 cd nextjs-saas-starter
 docker run -d --name saas-db -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:16
 cp .env.example .env.local     # then set AUTH_SECRET, e.g. to the output of: openssl rand -hex 32
@@ -85,7 +85,7 @@ Open <http://localhost:3000> and sign up: the first account is the admin. Until 
 
 Other ways to start:
 
-- **Use this template**: press [Use this template](https://github.com/light-cloud-templates/nextjs-saas-starter/generate) to create your own repository from this one.
+- **Use this template**: press [Use this template](https://github.com/light-cloud-dev/nextjs-saas-starter/generate) to create your own repository from this one.
 - **Deploy to Light Cloud**: open the [template page](https://www.light-cloud.com/templates/nextjs-saas-starter?utm_source=github&utm_medium=template&utm_campaign=nextjs-saas-starter) and press Deploy to get a running copy with a database.
 
 ## Deploy
@@ -244,10 +244,10 @@ Yes. It is a standard Next.js app with no Light Cloud code: any Node.js 22.12 ho
 
 ## Related templates
 
-- [react-node-saas-starter](https://github.com/light-cloud-templates/react-node-saas-starter): the same SaaS features with React, Vite and Express
-- [open-saas-starter](https://github.com/light-cloud-templates/open-saas-starter): Open SaaS by Wasp, with an AI demo app and file uploads
-- [nextjs-app-router-starter](https://github.com/light-cloud-templates/nextjs-app-router-starter): a plain Next.js App Router app
-- [express-postgresql-crud-api](https://github.com/light-cloud-templates/express-postgresql-crud-api): a small Node.js REST API with PostgreSQL
+- [react-node-saas-starter](https://github.com/light-cloud-dev/react-node-saas-starter): the same SaaS features with React, Vite and Express
+- [open-saas-starter](https://github.com/light-cloud-dev/open-saas-starter): Open SaaS by Wasp, with an AI demo app and file uploads
+- [nextjs-app-router-starter](https://github.com/light-cloud-dev/nextjs-app-router-starter): a plain Next.js App Router app
+- [express-postgresql-crud-api](https://github.com/light-cloud-dev/express-postgresql-crud-api): a small Node.js REST API with PostgreSQL
 
 ## Licence
 
