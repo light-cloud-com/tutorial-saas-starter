@@ -19,7 +19,7 @@ export const plans: Plan[] = [
     id: "free",
     name: "Free",
     priceMonthly: 0,
-    description: "For trying it out on your own.",
+    description: "For trying it out on your own. No card needed.",
     limits: { projects: 3, members: 3 },
     features: ["3 projects", "Up to 3 members", "REST API access"],
   },
