@@ -6,7 +6,9 @@ import * as schema from "./schema";
 // TLS on, certificate not verified (libpq semantics). A local URL without sslmode connects in plain text.
 function createPool() {
   // connectionTimeoutMillis: without it a request waits forever when the database is unreachable.
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL, max: 10, connectionTimeoutMillis: 5000 });
+  // max: 3 because every running instance opens its own pool, and a Dev database allows 10 connections
+  // per user: three instances use 9 and leave one for you.
+  const pool = new Pool({ connectionString: process.env.DATABASE_URL, max: 3, connectionTimeoutMillis: 5000 });
   // An idle connection dropped by the server must not crash the app; the pool replaces it.
   pool.on("error", (err) => console.error(`Database connection lost: ${err.message}`));
   return pool;
