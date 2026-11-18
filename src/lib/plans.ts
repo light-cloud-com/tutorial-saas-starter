@@ -27,7 +27,7 @@ export const plans: Plan[] = [
     id: "pro",
     name: "Pro",
     priceMonthly: 19,
-    description: "For small teams shipping every week.",
+    description: "For small teams shipping every week, now with email support.",
     limits: { projects: 50, members: 10 },
     features: ["50 projects", "Up to 10 members", "REST API access", "Email support"],
   },
