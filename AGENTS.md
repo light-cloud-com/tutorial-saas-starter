@@ -46,15 +46,7 @@ Cursor, VS Code with GitHub Copilot and Claude Desktop take the same command (`n
 3. `detect-local-framework` on this folder, then `upload-and-deploy`; or `create-application` from your GitHub copy of this repository.
 4. `wait-for-deployment` returns the live URL. If the build fails, `get-build-logs` shows why; `get-environment-logs` shows the running app's logs.
 
-Without an agent, people press Deploy on https://www.light-cloud.com/templates/nextjs-saas-starter.
-
-The Deploy button copies this template into your GitHub account and creates:
-
-- a server app that runs `npm run build`, then `npm start` (migrations, then `next start` on `PORT`)
-- a PostgreSQL database, with `DATABASE_URL` set on the app
-- a random `AUTH_SECRET`, generated at deploy
-
-Open the URL and sign up: it works with no other keys. The app works out its public URL from each request, so auth callbacks and email links work before you add a domain. Every push to the default branch deploys again. Templates with a database need a paid Light Cloud plan.
+Without an agent, follow part 1 of the series: https://blog.light-cloud.com/tutorials/start-a-saas-part-1-deploy
 
 ## Project rules
 

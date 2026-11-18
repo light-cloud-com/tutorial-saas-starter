@@ -41,7 +41,7 @@ export function PlanCard({
   );
 }
 
-const SETUP_DOCS = "https://github.com/light-cloud-com/templates/tree/main/starters/saas-starter-nextjs#turn-on-stripe-billing";
+const SETUP_DOCS = "https://blog.light-cloud.com/tutorials/start-a-saas-part-3-stripe";
 
 /**
  * Shown while Stripe is not configured. Platform admins see what to set; everyone else a neutral line.
