@@ -19,7 +19,7 @@ export function UserMenu({ name, email, isAdmin }: { name: string; email: string
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="flex w-full items-center gap-2.5 rounded-lg p-2 text-left hover:bg-accent focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none data-[state=open]:bg-accent"
+        className="flex w-full items-center gap-2.5 rounded-lg p-2 text-left hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none data-[state=open]:bg-accent"
         aria-label={`Account menu for ${name}`}
       >
         <Avatar name={name} seed={email} />

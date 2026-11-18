@@ -62,7 +62,7 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
           <Label htmlFor="q" className="sr-only">Search {query.tab}</Label>
           <div className="relative flex-1 sm:w-64">
             <Search className="pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
-            <Input id="q" name="q" defaultValue={query.q} placeholder={query.tab === "users" ? "Name or email" : "Name or slug"} className="pl-8" />
+            <Input id="q" name="q" defaultValue={query.q} placeholder={query.tab === "users" ? "Name or email…" : "Name or slug…"} className="pl-8" />
           </div>
           <Button type="submit" variant="outline">Search</Button>
         </form>
@@ -201,7 +201,7 @@ async function Users({ like, meId, query }: { like: string; meId: string; query:
               </div>
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-              {badges(u)} <span>{u.workspaces} workspaces · joined {formatDate(u.createdAt)}</span>
+              {badges(u)} <span>{u.workspaces} workspaces, joined {formatDate(u.createdAt)}</span>
             </div>
           </CardListItem>
         ))}
@@ -271,7 +271,7 @@ async function Workspaces({ like, query }: { like: string; query: Query }) {
             <p className="font-medium">{w.name}</p>
             <p className="text-xs text-muted-foreground">{w.slug}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-              {plan(w)} <span>{w.members} members · {w.projects} projects · {formatDate(w.createdAt)}</span>
+              {plan(w)} <span>{w.members} members, {w.projects} projects, created {formatDate(w.createdAt)}</span>
             </div>
           </CardListItem>
         ))}

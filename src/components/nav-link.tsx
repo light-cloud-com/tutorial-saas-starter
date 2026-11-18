@@ -29,7 +29,7 @@ export function NavLink({
     <Link
       href={href}
       aria-current={active ? "page" : undefined}
-      className={cn(styles[variant], "rounded-md focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none", variant === "sidebar" && "rounded-lg")}
+      className={cn(styles[variant], "rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none", variant === "sidebar" && "rounded-lg")}
     >
       {children}
     </Link>

@@ -33,7 +33,7 @@ export function WorkspaceSwitcher({ current, workspaces, plan }: { current: Work
       <DropdownMenuTrigger
         disabled={pending}
         aria-label={`Workspace: ${current.name}. Switch workspace`}
-        className="flex w-full items-center gap-2.5 rounded-lg border bg-background p-2 text-left hover:bg-accent focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:opacity-60 data-[state=open]:bg-accent"
+        className="flex w-full items-center gap-2.5 rounded-lg border bg-background p-2 text-left hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground data-[state=open]:bg-accent"
       >
         <Mark name={current.name} />
         <span className="min-w-0 flex-1">

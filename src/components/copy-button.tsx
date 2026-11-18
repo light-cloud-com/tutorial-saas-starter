@@ -41,7 +41,7 @@ export function CopyField({ value, label, className }: { value: string; label: s
         value={value}
         aria-label={label}
         onFocus={(e) => e.currentTarget.select()}
-        className="h-8 min-w-0 flex-1 rounded-lg border bg-background px-2 font-mono text-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        className="h-8 min-w-0 flex-1 rounded-lg border bg-background px-2 font-mono text-xs outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring"
       />
       <CopyButton value={value} label={`Copy ${label.toLowerCase()}`} />
     </div>
@@ -52,7 +52,7 @@ export function CopyField({ value, label, className }: { value: string; label: s
 export function CodeBlock({ code }: { code: string }) {
   return (
     <div className="relative">
-      <pre className="overflow-x-auto rounded-lg border bg-surface p-3 pr-12 font-mono text-xs leading-relaxed">
+      <pre tabIndex={0} className="overflow-x-auto rounded-lg border bg-surface p-3 pr-12 font-mono text-xs leading-relaxed focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
         <code>{code}</code>
       </pre>
       <CopyButton value={code} label="Copy command" className="absolute top-2 right-2" />

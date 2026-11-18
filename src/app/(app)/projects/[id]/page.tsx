@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[id]"
       <PageHeader
         title={project.name}
         breadcrumb={[{ label: "Projects", href: "/projects" }]}
-        description={`Created ${formatDate(project.createdAt)} · updated ${timeAgo(project.updatedAt)}`}
+        description={`Created ${formatDate(project.createdAt)}, updated ${timeAgo(project.updatedAt)}`}
       />
       <Card>
         <CardHeader>

@@ -97,7 +97,7 @@ export default async function ApiKeysPage() {
                 <p className="font-medium">{k.name}</p>
                 <code className="mt-1 inline-block rounded bg-muted px-1.5 py-0.5 font-mono text-xs">{k.start}…</code>
                 <p className="mt-1.5 text-xs text-muted-foreground">
-                  Created {formatDate(k.createdAt)} · {k.lastUsedAt ? `used ${timeAgo(k.lastUsedAt)}` : "never used"}
+                  Created {formatDate(k.createdAt)}, {k.lastUsedAt ? `used ${timeAgo(k.lastUsedAt)}` : "never used"}
                 </p>
               </CardListItem>
             ))}

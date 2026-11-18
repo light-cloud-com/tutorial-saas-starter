@@ -1,5 +1,5 @@
 import { and, count, desc, eq } from "drizzle-orm";
-import { ArrowRight, Check, CreditCard, FolderKanban, FolderPlus, KeyRound, UserPlus, Users } from "lucide-react";
+import { Check, CreditCard, FolderKanban, FolderPlus, KeyRound, UserPlus, type Users } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EmptyState } from "@/components/empty-state";
@@ -21,7 +21,7 @@ const countWhere = async (table: typeof schema.member | typeof schema.apiKey | t
   (await db.select({ n: count() }).from(table).where(eq(table.organizationId, organizationId)))[0].n;
 
 export default async function DashboardPage() {
-  const { user, workspace, plan, role } = await requireWorkspace();
+  const { workspace, plan, role } = await requireWorkspace();
   const manage = can(role, "member:manage");
   const [projects, members, keys, [{ invites }], recent] = await Promise.all([
     countWhere(schema.project, workspace.id),
@@ -50,7 +50,7 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <PageHeader title={`Welcome back, ${user.name.split(" ")[0]}`} description={`Here is what is happening in ${workspace.name}.`}>
+      <PageHeader title="Dashboard">
         <Button asChild>
           <Link href="/projects?new=1"><FolderPlus aria-hidden /> New project</Link>
         </Button>
@@ -86,7 +86,6 @@ export default async function DashboardPage() {
                       <span className="block text-xs text-muted-foreground">{item.text}</span>
                     </span>
                     <span className="sr-only">{item.done ? "(done)" : "(to do)"}</span>
-                    {!item.done && <ArrowRight className="size-4 text-muted-foreground group-hover:text-foreground" aria-hidden />}
                   </Link>
                 </li>
               ))}
@@ -96,33 +95,33 @@ export default async function DashboardPage() {
       )}
 
       <section aria-label="Usage" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat href="/projects" icon={FolderKanban} label="Projects" value={projects}>
+        <Stat href="/projects" label="Projects" value={projects}>
           <UsageBar used={projects} limit={current.limits.projects} label="Plan limit" />
         </Stat>
-        <Stat href="/settings/members" icon={Users} label="Members" value={members}>
+        <Stat href="/settings/members" label="Members" value={members}>
           <UsageBar used={members} limit={current.limits.members} label="Seats" />
         </Stat>
-        <Stat href={manage ? "/settings/api-keys" : undefined} icon={KeyRound} label="API keys" value={keys}>
+        <Stat href={manage ? "/settings/api-keys" : undefined} label="API keys" value={keys}>
           <p className="text-xs text-muted-foreground">{manage ? (keys ? "Manage keys" : "Create your first key") : "Owners and admins manage keys"}</p>
         </Stat>
-        <Stat href="/settings/billing" icon={CreditCard} label="Plan" value={current.name}>
+        <Stat href="/settings/billing" label="Plan" value={current.name}>
           <p className="text-xs text-muted-foreground">{current.priceMonthly ? `$${current.priceMonthly} a month` : "Free forever"}</p>
         </Stat>
       </section>
 
-      <div className="grid items-start gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3">
         <Card className={cn("lg:col-span-2", recent.length > 0 && "overflow-hidden pb-0 sm:pb-0")}>
           <CardHeader className="flex flex-row items-center justify-between gap-2">
             <CardTitle><h2>Recent projects</h2></CardTitle>
             {recent.length > 0 && (
               <Button asChild variant="ghost" size="sm">
-                <Link href="/projects">View all <ArrowRight aria-hidden /></Link>
+                <Link href="/projects">View all</Link>
               </Button>
             )}
           </CardHeader>
           <CardContent className={recent.length ? "px-0 sm:px-0" : undefined}>
             {recent.length === 0 ? (
-              <EmptyState icon={FolderKanban} title="No projects yet" description="Create a project here, or through the REST API." className="border-dashed">
+              <EmptyState icon={FolderKanban} title="No projects yet" description="Create a project here, or through the REST API." className="border-0 py-6 sm:py-8">
                 <Button asChild size="sm">
                   <Link href="/projects?new=1">New project</Link>
                 </Button>
@@ -132,14 +131,11 @@ export default async function DashboardPage() {
                 {recent.map((p) => (
                   <li key={p.id}>
                     <Link href={`/projects/${p.id}`} className="flex items-center gap-3 px-4 py-3 hover:bg-surface focus-visible:bg-surface focus-visible:outline-none sm:px-6">
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border bg-surface">
-                        <FolderKanban className="size-4 text-muted-foreground" aria-hidden />
-                      </span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-medium">{p.name}</span>
                         <span className="block truncate text-xs text-muted-foreground">{p.description || "No description"}</span>
                       </span>
-                      <span className="shrink-0 text-xs text-muted-foreground">{timeAgo(p.updatedAt)}</span>
+                      <span className="shrink-0 text-xs whitespace-nowrap text-muted-foreground">{timeAgo(p.updatedAt)}</span>
                     </Link>
                   </li>
                 ))}
@@ -152,11 +148,13 @@ export default async function DashboardPage() {
           <CardHeader>
             <CardTitle><h2>Quick actions</h2></CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-2">
+          <CardContent>
+            <ul className="divide-y border-y">
             <QuickAction href="/projects?new=1" icon={FolderPlus} label="New project" />
             {manage && <QuickAction href="/settings/members" icon={UserPlus} label="Invite a teammate" />}
             {manage && <QuickAction href="/settings/api-keys" icon={KeyRound} label="Create an API key" />}
             <QuickAction href="/settings/billing" icon={CreditCard} label="View plan and billing" />
+            </ul>
           </CardContent>
         </Card>
       </div>
@@ -164,20 +162,17 @@ export default async function DashboardPage() {
   );
 }
 
-function Stat({ href, icon: Icon, label, value, children }: { href?: string; icon: typeof Users; label: string; value: number | string; children: React.ReactNode }) {
+function Stat({ href, label, value, children }: { href?: string; label: string; value: number | string; children: React.ReactNode }) {
   const body = (
     <>
-      <div className="flex items-center justify-between text-muted-foreground">
-        <span className="text-sm font-medium">{label}</span>
-        <Icon className="size-4" aria-hidden />
-      </div>
-      <p className="mt-2 text-2xl font-semibold tracking-tight">{value}</p>
+      <p className="text-sm font-medium text-muted-foreground">{label}</p>
+      <p className="mt-2 text-2xl font-semibold tracking-tight tabular-nums">{value}</p>
       <div className="mt-3">{children}</div>
     </>
   );
   const cls = "block rounded-lg border bg-card p-4 sm:p-5";
   return href ? (
-    <Link href={href} className={cn(cls, "hover:border-foreground/20 hover:bg-surface focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none")}>
+    <Link href={href} className={cn(cls, "hover:border-foreground/20 hover:bg-surface focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none")}>
       {body}
     </Link>
   ) : (
@@ -187,10 +182,11 @@ function Stat({ href, icon: Icon, label, value, children }: { href?: string; ico
 
 function QuickAction({ href, icon: Icon, label }: { href: string; icon: typeof Users; label: string }) {
   return (
-    <Link href={href} className="flex items-center gap-3 rounded-lg border px-3 py-2.5 font-medium hover:bg-surface focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none">
-      <Icon className="size-4 text-muted-foreground" aria-hidden />
-      <span className="flex-1">{label}</span>
-      <ArrowRight className="size-4 text-muted-foreground" aria-hidden />
-    </Link>
+    <li>
+      <Link href={href} className="flex items-center gap-3 rounded-sm py-2.5 font-medium hover:text-link focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
+        <Icon className="size-4 text-muted-foreground" aria-hidden />
+        <span className="flex-1">{label}</span>
+      </Link>
+    </li>
   );
 }

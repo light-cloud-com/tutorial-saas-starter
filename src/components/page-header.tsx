@@ -20,7 +20,7 @@ export function PageHeader({
           <ol className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
             {breadcrumb.map((b) => (
               <li key={b.href} className="flex items-center gap-1">
-                <Link href={b.href} className="rounded-sm hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none">
+                <Link href={b.href} className="rounded-sm hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
                   {b.label}
                 </Link>
                 <ChevronRight className="size-3.5" aria-hidden />

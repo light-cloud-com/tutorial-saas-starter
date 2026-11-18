@@ -4,6 +4,10 @@ All notable changes to the Next.js SaaS Starter with PostgreSQL and Stripe are l
 
 ## [Unreleased]
 
+### Changed
+
+- Interface polish: buttons press in and show disabled as a muted fill with a not-allowed cursor (no fading); focus rings and links pass WCAG AA contrast; the dashboard is titled "Dashboard"; landing page without section labels, icon tiles or arrows; no horizontal scroll on phones.
+
 ### Security
 
 - The admin page checks for a platform admin itself, not only in its layout, so its user and workspace lists are no longer sent to signed-in non-admins.

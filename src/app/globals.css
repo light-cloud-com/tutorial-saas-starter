@@ -9,6 +9,7 @@
  */
 :root {
   --radius: 0.5rem;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1); /* strong ease-out for presses and state changes */
   --background: #ffffff;
   --foreground: #09090b;
   --card: #ffffff;
@@ -18,7 +19,7 @@
   --surface: #fafafa; /* sidebar, table headers, muted areas */
   --primary: oklch(0.55 0.2 264);
   --primary-foreground: #ffffff;
-  --link: oklch(0.55 0.2 264); /* accent as text: links */
+  --link: oklch(0.52 0.2 264); /* accent as text: links, active nav and badges; 4.8:1 on its 10% tint */
   --secondary: #f4f4f5;
   --secondary-foreground: #18181b;
   --muted: #f4f4f5;
@@ -93,10 +94,14 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring;
   }
   html {
     color-scheme: light;
+  }
+  html,
+  body {
+    overflow-x: clip;
   }
   html.dark {
     color-scheme: dark;
@@ -109,13 +114,28 @@
   h2,
   h3 {
     @apply tracking-tight;
+    text-wrap: balance;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @layer utilities {
   /* Horizontal scroller (settings tabs on phone) with a fade on the right edge. */
   .scroll-fade {
-    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, var(--foreground) calc(100% - 24px), transparent); /* a mask reads alpha only */
     scrollbar-width: none;
   }
   .scroll-fade::-webkit-scrollbar {

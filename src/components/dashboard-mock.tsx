@@ -1,12 +1,12 @@
-import { Check, CreditCard, FolderKanban, KeyRound, LayoutDashboard, Settings, Users } from "lucide-react";
+import { Check, FolderKanban, LayoutDashboard, Settings } from "lucide-react";
 
 // A static picture of the real dashboard for the landing page, drawn with the same tokens so it
 // follows the theme. Swap it for a screenshot of your product when you have one.
 const stats = [
-  { label: "Projects", value: "2", bar: 66, icon: FolderKanban },
-  { label: "Members", value: "4", bar: 40, icon: Users },
-  { label: "API keys", value: "1", icon: KeyRound },
-  { label: "Plan", value: "Pro", icon: CreditCard },
+  { label: "Projects", value: "2", bar: 66 },
+  { label: "Members", value: "4", bar: 40 },
+  { label: "API keys", value: "1" },
+  { label: "Plan", value: "Pro" },
 ];
 const checklist = [
   { label: "Create your workspace", done: true },
@@ -23,12 +23,6 @@ const projects = [
 export function DashboardMock({ appName }: { appName: string }) {
   return (
     <div role="img" aria-label={`The ${appName} dashboard: usage, a getting-started checklist and recent projects`} className="overflow-hidden rounded-xl border bg-background text-left">
-      <div aria-hidden className="flex h-9 items-center gap-1.5 border-b bg-surface px-3">
-        <span className="size-2.5 rounded-full bg-border" />
-        <span className="size-2.5 rounded-full bg-border" />
-        <span className="size-2.5 rounded-full bg-border" />
-        <span className="mx-auto hidden rounded-md border bg-background px-12 py-0.5 text-[10px] text-muted-foreground sm:block">app.example.com/dashboard</span>
-      </div>
       <div aria-hidden className="flex text-[11px] sm:text-xs">
         <div className="hidden w-44 shrink-0 flex-col gap-3 border-r bg-surface p-3 md:flex">
           <div className="flex items-center gap-2 font-semibold">
@@ -44,7 +38,7 @@ export function DashboardMock({ appName }: { appName: string }) {
             <p className="flex items-center gap-2 px-2 py-1.5 text-muted-foreground"><Settings className="size-3.5" /> Settings</p>
           </div>
           <div className="mt-auto flex items-center gap-2 border-t pt-3">
-            <span className="flex size-6 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-semibold text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200">SJ</span>
+            <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 text-[10px] font-semibold text-link">SJ</span>
             <span className="min-w-0">
               <span className="block truncate font-medium">Sarah Jones</span>
               <span className="block truncate text-[10px] text-muted-foreground">sarah@leedsdesignstudio.example</span>
@@ -53,13 +47,12 @@ export function DashboardMock({ appName }: { appName: string }) {
         </div>
         <div className="min-w-0 flex-1 space-y-3 p-3 sm:space-y-4 sm:p-5">
           <div>
-            <p className="text-sm font-semibold sm:text-base">Welcome back, Sarah</p>
-            <p className="text-muted-foreground">Here is what is happening in Leeds Design Studio.</p>
+            <p className="text-sm font-semibold sm:text-base">Dashboard</p>
           </div>
           <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
-            {stats.map(({ label, value, bar, icon: Icon }) => (
+            {stats.map(({ label, value, bar }) => (
               <div key={label} className="rounded-md border p-2.5">
-                <p className="flex items-center justify-between text-muted-foreground">{label} <Icon className="size-3" /></p>
+                <p className="text-muted-foreground">{label}</p>
                 <p className="mt-1 text-sm font-semibold sm:text-base">{value}</p>
                 <div className="mt-2 h-1 rounded-full bg-muted">{bar && <div className="h-full rounded-full bg-primary" style={{ width: `${bar}%` }} />}</div>
               </div>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 // list below `sm` (CardList in components/data-list.tsx).
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
-    <div className="overflow-x-auto rounded-lg border">
+    <div className="relative overflow-x-auto rounded-lg border">
       <table className={cn("w-full text-left text-sm", className)} {...props} />
     </div>
   )

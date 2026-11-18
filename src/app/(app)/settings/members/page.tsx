@@ -145,7 +145,7 @@ export default async function MembersPage() {
           </CardHeader>
           <CardContent>
             <ActionForm action={inviteMemberAction} resetOnSuccess className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-[1fr_auto_auto] sm:items-start">
+              <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto_auto] sm:items-start">
                 <Field label="Email" name="email" type="email" placeholder="name@example.com" autoComplete="off" maxLength={limits.email} required />
                 <InviteRoleSelect roles={roles} />
                 <SubmitButton className="sm:mt-[22px]"><MailPlus aria-hidden /> Send invite</SubmitButton>
@@ -167,7 +167,7 @@ export default async function MembersPage() {
                 <li key={inv.id} className="flex flex-wrap items-center gap-3 p-3 sm:flex-nowrap sm:px-4">
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium">{inv.email}</p>
-                    <p className="text-xs text-muted-foreground">{formatRole(inv.role)} · expires {formatDate(inv.expiresAt)}</p>
+                    <p className="text-xs text-muted-foreground">{formatRole(inv.role)}, invite expires {formatDate(inv.expiresAt)}</p>
                   </div>
                   <CopyButton value={`${origin}/invite/${inv.id}`} label={`Copy invite link for ${inv.email}`} />
                   <RowActions

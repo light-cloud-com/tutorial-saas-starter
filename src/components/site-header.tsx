@@ -31,7 +31,7 @@ export function SiteHeader({ appName, signedIn }: { appName: string; signedIn: b
         <Logo name={appName} />
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none">
+            <Link key={l.href} href={l.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
               {l.label}
             </Link>
           ))}
