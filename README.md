@@ -58,12 +58,6 @@ None of these reach the browser.
 ## Tutorials
 
 1. [Deploy your app and database](https://blog.light-cloud.com/tutorials/start-a-saas-part-1-deploy)
-2. [Send sign-up emails with Resend](https://blog.light-cloud.com/tutorials/start-a-saas-part-2-email)
-3. [Take payments with Stripe, in test mode](https://blog.light-cloud.com/tutorials/start-a-saas-part-3-stripe)
-4. [Add your own domain](https://blog.light-cloud.com/tutorials/start-a-saas-part-4-custom-domain)
-5. [Add a password-protected staging site](https://blog.light-cloud.com/tutorials/start-a-saas-part-5-staging)
-6. [Preview every pull request](https://blog.light-cloud.com/tutorials/start-a-saas-part-6-previews)
-7. [Go live with real payments](https://blog.light-cloud.com/tutorials/start-a-saas-part-7-go-live)
 
 ## Licence
 
